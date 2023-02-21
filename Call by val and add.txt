@@ -1,0 +1,23 @@
+#include <stdio.h>
+void callbyref(int *n)
+{
+    *n=*n+5;
+    printf("The new value after calbyref is %d", *n);
+}
+void callbyval(int n)
+{
+    n=n+10;
+    printf("The new value after call by value is %d\n", n);
+}
+
+int main() 
+{
+    int a,*p;
+    scanf("%d", &a);
+    printf("The value %d\n", a);
+    p=&a;
+    
+    callbyval(a);
+    callbyref(p);
+    return 0;
+}

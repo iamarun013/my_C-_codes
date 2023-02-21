@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+ int a[5];
+ int i;
+ cout<<"Enter the elements of the array\n";
+ for(i=0;i<5;i++)
+ {cout<<"enter"<<i<<"number"<<endl;
+ cin>>a[i];}
+ int last_duplicate=0;
+ cout<<"Duplicates are \n";
+ for(i=0;i<4;i++)
+ {
+     if(a[i]==a[i+1]&&last_duplicate!=a[i])
+     {
+         last_duplicate=a[i];
+         cout<<a[i]<<endl;
+     }
+        
+   
+ }
+     return 0;
+}

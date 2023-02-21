@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int A[10][10], B[10][10], M[10][10], i, j, k, x, y;
+    cout<<"Enter the number of rows and columns\n";
+    cin>>x >>y;
+    cout<<"\n Enter the elements of the first matrix\n";
+    for(i=0;i<x;i++)
+    {
+        for(j=0;j<y;j++)
+        {
+            cin>>A[i][j];
+        }
+    }
+    cout<<"\n Good now enter the elements of the second matrix\n";
+    for(i=0;i<x;i++)
+    {
+        for(j=0;j<y;j++)
+        {
+            cin>>B[i][j];
+        }
+    }
+    cout<<"n very very good now let's store the multiplication of the matrices\n";
+    for(i=0;i<x;i++)
+    {
+        for(j=0;j<y;j++)
+        {
+            M[i][j]=0;
+            for(k=0;k<y;k++)    
+        {
+            M[i][j]+=A[i][k]*B[k][j];
+            
+        }
+    }
+    cout<<"After multiolication, now comes the time to print the matrices\n";
+    for(i=0;i<x;i++)
+    {
+        for(j=0;j<y;j++)
+        {
+            cout<<M[i][j] <<" ";
+        }
+    }
+    return 0;
+}
+}

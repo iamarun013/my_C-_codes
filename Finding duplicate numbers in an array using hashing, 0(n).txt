@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n,i;
+    cout<<"Enter the size of the array \n";
+    cin>>n;
+    int A[n];
+    for(i=0;i<n;i++)
+    {
+        cout<<i+1<<"no: ";
+        cin>>A[i];
+    }
+    int hash[n];
+    for(int i=0;i<n;i++)
+    {
+        hash[i]=0;
+    }
+    for(i=0;i<n;i++)
+    {
+        hash[A[i]]++;
+    }
+    cout<<"Duplicate are \n";
+    for(i=0;i<n;i++)
+    {
+        if(hash[i]>1)
+        cout<<A[i]<<endl;
+            }
+
+    return 0;
+}

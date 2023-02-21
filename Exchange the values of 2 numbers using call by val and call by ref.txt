@@ -1,0 +1,31 @@
+#include <stdio.h>
+void callbyref(int *n, int *no)
+{   int temp;
+    temp=*n;
+    *n=*no;
+    *no=temp;
+    printf("The new value after calbyref swapping is %d %d", *n, *no);
+}
+void callbyval(int n, int no)
+{
+    int temp;
+    temp=n;
+    n=no;
+    no=temp;
+    
+    printf("The new value after call by value swapping is %d %d \n", n, no);
+}
+
+int main() 
+{
+    int a,b,*p,*q;
+    scanf("%d %d",&a,&b);
+    
+    printf("The value of a and b at first %d %d \n", a, b);
+    p=&a;
+    q=&b;
+    
+    callbyval(a,b);
+    callbyref(p,q);
+    return 0;
+}

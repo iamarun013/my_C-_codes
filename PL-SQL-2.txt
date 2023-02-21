@@ -1,0 +1,128 @@
+Q-1.
+declare 
+year number;
+BEGIN
+year:=&year;
+if(MOD(year,100)=0)THEN
+	if(MOD(year,400)=0)then
+		dbms_output.put_line ('Leap year');
+		ELSE
+		dbms_output.put_line ('Not leap');
+		end if;
+ELSIF(MOD(year,4)=0) then
+	dbms_output.put_line ('Leap year');
+	ELSE
+	dbms_output.put_line ('Not leap');
+	end if;
+	end;
+	/
+Q-2.
+declare
+x number;
+BEGIN
+x:=1;
+LOOP
+ dbms_output.put_line(x);
+ x:=x+2;
+ if( x>10 ) THEN
+	exit;
+	end IF;
+	end LOOP;
+end;	
+/
+
+Q-3.
+DECLARE
+a number(2) ;
+BEGIN
+FOR a IN REVERSE 1 .. 10 LOOP
+dbms_output.put_line('value of a: ' || a);
+END LOOP;
+END;
+/
+
+Q-4.
+declare 
+a number:=1;
+begin 
+for a in 1 .. 5 LOOP
+insert into item values(a);
+end loop;
+end;
+/
+
+Q-5.
+declare 
+a number;
+BEGIN
+dbms_output.put_line('Enter a number ');
+a:=&a;
+if(a>0) THEN
+dbms_output.put_line('Positive number');
+ELSIF(a=0) THEN
+dbms_output.put_line('Equal to zero');
+ELSE
+dbms_output.put_line('Negative number');
+end if;
+end;
+/
+
+Q-6.
+DECLARE
+a number;
+b number;
+c number;
+BEGIN
+dbms_output.put_line('Enter three numbers ');
+a:=&a;
+b:=&b;
+c:=&c;
+if(a>b)THEN
+	if(a>c)THEN
+	dbms_output.put_line(' 1st number is greatest ');
+	ELSE
+	dbms_output.put_line('3rd number is greatest');
+	end if;
+ELSE	
+	if(b>c)THEN
+	dbms_output.put_line(' 2nd number is greatest ');
+	ELSE
+	dbms_output.put_line('3rd number is greatest');
+	end if;
+end if;
+end;
+/
+
+Q-7.
+declare
+fname employee.first_name%type;
+lname employee.last_name%type;
+da employee.hiredate%type;
+BEGIN
+select first_name, last_name, hiredate into fname, lname, da from employee;
+dbms_output.put_line(fname ||'  ' ||lname || ' '||da);
+end;
+/
+
+Q-8.
+declare
+fname employee.first_name%type;
+des employee.designation%type;
+sal employee.salary%type;
+BEGIN
+select first_name, designation, salary into fname, des, sal from employee where id=140345;
+dbms_output.put_line(fname ||'  ' ||des || ' '||sal);
+end;
+/
+
+Q-9.
+declare
+fname employee.first_name%type;
+des employee.designation%type;
+sal employee.salary%type;
+dep employee.dept_id%type;
+BEGIN
+select first_name, designation, salary into fname, des, sal from employee where dept_id='CSE' ;
+dbms_output.put_line(fname ||'  ' ||des || ' '||sal);
+end;
+/
